@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Found Saving Account</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<h1>Your Saving Account</h1>
+<hr>
+<body>
+<table border="1" class="table table-striped table-responsive-md">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th> <span>&#36;</span> Balance</th>
+        <th>What Would Like To Do?</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${savingAccount}">
+
+        <td th:text="${savingAccount.savingId}"></td>
+        <td  th:text="${savingAccount.newBalance}"></td>
+
+        <td>
+            <a th:href="@{/savingwithdrawalbutton}" class="btn btn-primary">Withdrawal</a>
+            <a th:href="@{/savingdepositbutton}" class="btn btn-primary">Deposit</a >
+            <a th:href="@{/closesavingaccountbutton}" class="btn btn-primary">Close Account</a >
+
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+
+<a th:href="@{/}" class="btn btn-success">Logout</a>
+</body>
+</html>

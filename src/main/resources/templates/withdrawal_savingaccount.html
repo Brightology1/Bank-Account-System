@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Withdrawal Saving Account</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+<h2>Saving Account Withdrawal</h2>
+<hr>
+
+<form action = "#" th:action="@{/savingwithdrawal}" th:object="${savingAccount}"  method="POST">
+
+    <div>
+
+        <input type="number"  th:name="savingId" placeholder="Enter Account Id" class="form-control mb-4 col-4">
+        <input type="number"  th:name="addOrMinusBalance" placeholder="Amount to Withdraw" class="form-control mb-4 col-4">
+
+
+        <button type="submit" class="btn btn-info col-2"> Withdraw </button>
+
+    </div>
+
+</form>
+</body>
+</html>
